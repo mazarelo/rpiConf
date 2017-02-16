@@ -5,23 +5,35 @@
 CONFIGFILES=$HOME/.rpiConf
 DOWNLOADS=$HOME/Downloads
 
-#make config files executable
+echo "****** Making files executable ******"
 sudo chmod +==x $CONFIGFILES/*.sh
 
-#install zsh
+echo "****** Installing Zsh ******"
 #sudo apt-get install zsh
 
-#install git
+echo "****** Installing Git ******"
 sudo apt-get install git
 
-#Install Server
+echo "****** Installing Nginx ******"
+  sudo apt-get update
+  sudo apt-get install nginx -y
+echo "****** Installing PHP Extensions ******"
+apt-get install -y php5-fpm php5-cli php5-mcrypt php5-curl php5-mysql php-apc 
 
-apt-get install -y nginx php5-fpm php5-cli php5-mcrypt php5-curl php5-mysql php-apc node
+echo "****** Installing Node ******"
+  sudo apt-get update
+  sudo apt-get install nodejs
+  sudo apt-get install npm
+
+echo "****** Restarting Nginx ******"
 service nginx start
 update-rc.d nginx defaults
+
+echo "****** Removing Nginx defaults ******"
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 
+echo "****** Installing phpmyadmin ******"
 # install phpmyadmin and give password(s) to installer
 # for simplicity I'm using the same password for mysql and phpmyadmin
 debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
@@ -31,17 +43,20 @@ debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/app-pass password $PASSW
 debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2"
 apt-get -y install phpmyadmin
 
-
-# Enable php extensions
+echo "****** Enable php extensions ******"
 php5enmod mcrypt
 
-# Install Composer
+echo "****** Installing Composer ******"
 cd /tmp
 php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
 php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 php -r "unlink('composer-setup.php');"
 
-# Symlink phantomjs
+echo "****** Symlink PhantomJs ******"
 #ln -sf /vagrant/libs/phantomjs /usr/local/bin/phantomjs
 
+echo "****** Restarting Services ******"
 service php5-fpm restart && service nginx restart
+
+#Install No-ip
+#http://www.noip.com/support/knowledgebase/install-ip-duc-onto-raspberry-pi/
