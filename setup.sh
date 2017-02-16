@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Setup to my raspberry pi Servers
-
+PASSWORD='root'
 CONFIGFILES=$HOME/.rpiConf
 DOWNLOADS=$HOME/Downloads
 
