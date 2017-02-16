@@ -8,7 +8,7 @@ DOWNLOADS=$HOME/Downloads
 echo "****** Making files executable ******"
 sudo chmod +==x $CONFIGFILES/*.sh
 
-echo "****** Installing Zsh ******"
+#echo "****** Installing Zsh ******"
 #sudo apt-get install zsh
 
 echo "****** Installing Git ******"
@@ -25,7 +25,7 @@ echo "****** Installing Node ******"
   sudo apt-get install nodejs
   sudo apt-get install npm
 
-echo "****** Restarting Nginx ******"
+echo "****** Starting Nginx ******"
 service nginx start
 update-rc.d nginx defaults
 
@@ -52,7 +52,7 @@ php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
 php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 php -r "unlink('composer-setup.php');"
 
-echo "****** Symlink PhantomJs ******"
+#echo "****** Symlink PhantomJs ******"
 #ln -sf /vagrant/libs/phantomjs /usr/local/bin/phantomjs
 
 echo "****** Restarting Services ******"
