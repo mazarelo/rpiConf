@@ -34,6 +34,9 @@ echo "****** Installing PHP Extensions ******"
 echo "****** Installing Node ******"
   $CONFIGFILES/bin/node
 
+echo "****** Installing Mysq Server ******"
+  sudo apt-get install mysql-server
+
 echo "****** Installing phpmyadmin ******"
   phpmyadmin_installer $PASSWORD
 
