@@ -15,12 +15,12 @@ source $CONFIGFILES/bin/oh-my-zsh.sh
 echo "****** Making files executable ******"
   sudo chmod +==x $CONFIGFILES/*.sh
   sudo chmod +==x $CONFIGFILES/bin/*.sh
+  
+echo "****** Installing Git ******"
+  sudo apt-get install git
 
 echo "****** Installing Oh-My-Zsh ******"
   powerlinefonts_installer $DOWNLOADS $HOME
-
-echo "****** Installing Git ******"
-  sudo apt-get install git
 
 echo "****** Installing Nginx ******"
   $CONFIGFILES/bin/nginx
