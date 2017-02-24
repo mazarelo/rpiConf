@@ -33,6 +33,9 @@ echo "****** Removing Nginx defaults ******"
   sudo rm /etc/nginx/sites-enabled/default
   sudo rm /etc/nginx/sites-available/default
 
+echo "****** Installing Mysq Server ******"
+  sudo apt-get install mysql-server
+
 echo "****** Installing phpmyadmin ******"
   sudo apt-get -y install phpmyadmin
 
