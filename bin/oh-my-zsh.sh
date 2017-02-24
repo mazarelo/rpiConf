@@ -1,5 +1,7 @@
+#!/bin/bash
+
 powerlinefonts_installer(){
-    echo "****** Installing Zsh ******"
+    #echo "****** Installing Oh-My-Zsh ******"
         sudo apt install zsh
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 

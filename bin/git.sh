@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo "****** Installing Git ******"
+#echo "****** Installing Git ******"
   sudo apt-get install git

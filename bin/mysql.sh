@@ -1,3 +1,4 @@
+#!/bin/bash
 
 mysql_installer(){
     # install mysql and give password to installer

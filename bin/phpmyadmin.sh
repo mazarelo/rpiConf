@@ -1,5 +1,7 @@
 #!/bin/bash
+
 phpmyadmin_installer(){
+#echo "****** Installing phpmyadmin ******"
   # for simplicity I'm using the same password for mysql and phpmyadmin
   debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
   debconf-set-selections <<< "phpmyadmin phpmyadmin/app-password-confirm password $1"

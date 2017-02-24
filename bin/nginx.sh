@@ -1,5 +1,6 @@
 #!/bin/bash
-echo "****** Installing Nginx ******"
+
+#echo "****** Installing Nginx ******"
   sudo apt-get update
   sudo apt-get install nginx -y
 echo "****** Adding listener to nginx conf file ******"
