@@ -15,3 +15,5 @@ echo "****** Starting Nginx ******"
 echo "****** Removing Nginx defaults ******"
   sudo rm /etc/nginx/sites-enabled/default
   sudo rm /etc/nginx/sites-available/default
+
+  ln -s /etc/nginx/sites-available/*.conf /etc/nginx/sites-enabled
